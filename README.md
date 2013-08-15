@@ -1,6 +1,6 @@
 # Omniauth::Fidbacks
 
-TODO: Write a gem description
+A Fidbacks OAuth2 strategy for OmniAuth.
 
 ## Installation
 
@@ -18,7 +18,16 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+Register your application with Fidbacks to receive an API key: https://partner.fidbacks.com/
+
+This is an example that you might put into a Rails initializer at `config/initializers/omniauth.rb`:
+
+```ruby
+Rails.application.config.middleware.use OmniAuth::Builder do
+  provider :fidbacks, ENV['FIDBACKS_KEY'], ENV['FIDBACKS_SECRET']
+end
+```
+You can now access the OmniAuth Fidbacks OAuth2 URL: `/auth/fidbacks`.
 
 ## Contributing
 
